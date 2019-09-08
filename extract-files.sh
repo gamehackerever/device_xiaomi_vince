@@ -11,7 +11,10 @@ function blob_fixup() {
         vendor/lib/libvidhance_gyro.so)
             patchelf --replace-needed "android.frameworks.sensorservice@1.0.so" "android.frameworks.sensorservice@1.0-v27.so" "${2}"
             ;;
-   esac
+        vendor/lib/hw/camera.msm8953.so)
+            patchelf --replace-needed "libui.so" "libshims_libui.so" "${2}"
+            ;;
+    esac
 }
 
 if [ "${BASH_SOURCE[0]}" != "${0}" ]; then

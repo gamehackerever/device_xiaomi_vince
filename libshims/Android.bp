@@ -21,3 +21,11 @@ cc_library_shared {
     compile_multilib: "32",
     vendor: true
 }
+
+cc_library_shared {
+    name: "libshims_libui",
+    shared_libs: ["libui"],
+    compile_multilib: "32",
+    srcs: ["GraphicBuffer.cpp"],
+    vendor: true,
+}

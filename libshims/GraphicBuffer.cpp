@@ -1,5 +1,5 @@
 #include <string>
-
+#include <stdint.h>
 #include <ui/GraphicBuffer.h>
 
 extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
@@ -25,4 +25,12 @@ extern "C" void _ZN7android13GraphicBufferC1EjjijjP13native_handleb(
         (keepOwnership ? android::GraphicBuffer::TAKE_HANDLE : android::GraphicBuffer::WRAP_HANDLE);
     _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(inHandle, inMethod, inWidth, inHeight,
         inFormat, static_cast<uint32_t>(1), static_cast<uint64_t>(inUsage), inStride);
+}
+
+namespace android {
+    extern "C" void _ZN7android13GraphicBuffer4lockEjPPvPiS3_(uint32_t inUsage, void** vaddr, int32_t* outBytesPerPixel, int32_t* outBytesPerStride);
+
+    extern "C" void _ZN7android13GraphicBuffer4lockEjPPv(uint32_t inUsage, void** vaddr) {
+        _ZN7android13GraphicBuffer4lockEjPPvPiS3_(thisptr, inUsage, vaddr, nullptr, nullptr);
+    }
 }
