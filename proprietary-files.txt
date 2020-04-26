@@ -600,6 +600,10 @@ vendor/lib/libchromatix_vince_ov5675_qtech_snapshot.so|0d86adbff9cde0737aae801b5
 vendor/lib/libchromatix_vince_ov5675_qtech_zsl_preview_3a.so|dbeabc0aeb10110a4bf4aaa3d4314b285e567026
 vendor/lib/libchromatix_vince_ov5675_qtech_zsl_video_3a.so|f77754085d1a06ecfd09575cc06eb150c40c9099
 
+# Camera watermark - from jasmine V11.0.8.0.QDIMIXM
+vendor/lib/libMiWatermark.so|fe09202b8283cd88f86e96a5ef52b4db94b7ade5
+vendor/lib/libft2vendor.so|1332ed2141660b9372c959ca1155575c25a73751
+
 # Camera configs - from vince
 vendor/etc/camera/camera_config.xml
 vendor/etc/camera/vince_imx486_ofilm_chromatix.xml
