@@ -134,6 +134,9 @@ ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.qti.sys.fw.bservice_enable=true
 ro.sys.fw.dex2oat_thread_count=8
 
+# Perf
+ro.vendor.perf.scroll_opt=true
+
 # Radio
 persist.radio.multisim.config=dsds
 persist.vendor.radio.add_power_save=1
