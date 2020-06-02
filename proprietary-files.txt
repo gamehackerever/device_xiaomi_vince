@@ -49,15 +49,15 @@ vendor/lib64/libadiertac.so|98a8c2702d4e203689e4a80c69c4b1cf93af1567
 vendor/lib64/libaudcal.so|758db7040b1efb88a65e9ba2196aa9b27edebd49
 vendor/lib64/libaudioalsa.so|534d4dc07fecea0611273c745721b1ed2015a3a3
 
-# Audio ACDB - from LA.UM.9.6.2.r1-04100-89xx.0
-vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb|0364848ae2eb5505bdace46d6b8f1391a39095a8
-vendor/etc/acdbdata/QRD/QRD_General_cal.acdb|6e8c873201410aa64eebf75819d8ea3bc11613cf
-vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb|0ae1d3c0dfd9c27afd030584b233d2f4b454a743
-vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb|855422d5b156ed60f5f6bacb9458e85f6c67ed12
-vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb|457bd7d412d9359297b9923cee264214d013547a
-vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb|ba8ab21912dd9a8c41014f6c26f2dca6d4476fdf
-vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb|b1a9a1497d1ecfab01e8a59d4c33410d409753a3
-vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp|997da5dd12d92c6c803cf33c69b5a1a92dd2fe49
+# Audio ACDB
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Bluetooth - from LA.UM.9.6.2.r1-04100-89xx.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|2401640a10df4de23f704b87c4adab2da9ed111d
