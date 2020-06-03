@@ -962,6 +962,9 @@ vendor/lib/vendor.qti.hardware.perf@2.0.so|280749be351cb0c26c0c6ee324615b77ea1b1
 vendor/lib/vendor.qti.hardware.perf@2.1.so|e7719a0ba123103f06c51cd985f10f3f8c3aa4c3
 vendor/lib/vendor.qti.hardware.perf@2.2.so|4f4f2fd8784bc9e07b432978e0397c02868ac8f6
 
+# Novatek touchscreen firmware
+etc/firmware/novatek_ts_fw.bin:vendor/firmware/novatek_ts_fw.bin
+
 # Perf (configs) - from LA.UM.9.6.2.r1-03300-89xx.0
 vendor/etc/perf/commonresourceconfigs.xml|485c26f12f5f135348888ba5368edede70fcab4a
 vendor/etc/perf/perfboostsconfig.xml|1c120821b2fe9b3ebf9d00b7bc8c0a374c2918d2
