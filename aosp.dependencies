@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "r5p-dev/android_kernel_xiaomi_vince",
+    "target_path": "kernel/xiaomi/vince"
+  },
+  {
+    "repository": "r5p-dev/proprietary_vendor_xiaomi_vince",
+    "target_path": "vendor/xiaomi/vince"
+  }
+]
