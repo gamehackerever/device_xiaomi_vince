@@ -8,3 +8,13 @@ allow qti_init_shell proc_swap:file { open write };
 
 # Postboot
 allow qti_init_shell sysfs:file { write setattr };
+
+# Required for FM
+allow qti_init_shell self:socket create;
+
+allow qti_init_shell { sysfs sysfs_dm }:file write;
+
+# R
+allow qti_init_shell vfat:dir { search };
+allow qti_init_shell system_data_file:dir { write };
+allow qti_init_shell system_data_file:dir { getattr };
