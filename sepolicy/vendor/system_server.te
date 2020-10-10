@@ -6,3 +6,7 @@ allow system_server sysfs_battery_supply:file { read open getattr };
 
 # vibrator
 allow system_server sysfs_vibrator:file read;
+
+# R
+allow system_server exported_camera_prop:file { read };
+allow system_server sysfs:file { read };
