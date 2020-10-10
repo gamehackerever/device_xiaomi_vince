@@ -46,3 +46,15 @@ allow hal_fingerprint_default mnt_user_file:dir { search };
 allow hal_fingerprint_default mnt_user_file:lnk_file { read };
 allow hal_fingerprint_default sdcardfs:dir { search };
 allow hal_fingerprint_default sdcardfs:file { getattr };
+
+allow hal_fingerprint_default gx_fpd_data_file:dir create_dir_perms;
+allow hal_fingerprint_default system_data_file:dir create_dir_perms;
+allow hal_fingerprint_default gx_fpd_data_file:file create_file_perms;
+
+# R
+allow hal_fingerprint_default vfat:dir { search };
+allow hal_fingerprint_default sysfs_leds:dir { search };
+allow hal_fingerprint_default sysfs_battery_supply:dir { search };
+allow hal_fingerprint_default storage_file:dir { search };
+allow hal_fingerprint_default storage_file:lnk_file { search };
+allow hal_fingerprint_default mnt_user_file:dir { search };
