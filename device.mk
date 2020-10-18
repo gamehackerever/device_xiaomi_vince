@@ -181,6 +181,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8953 \
     libdisplayconfig \
 	libvulkan \
+    libdisplayconfig.qti.vendor \
     liboverlay \
     libqdMetaData.system \
     libgenlock \
