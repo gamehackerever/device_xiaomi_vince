@@ -79,9 +79,6 @@ extract "${MY_DIR}"/proprietary-files.txt "${SRC}" \
 function blob_fixup() {
 	case "${1}" in
 
-	product/lib64/libdpmframework.so)
-	patchelf --add-needed libdpmframework_shim.so "${2}"
-	;;
         lib64/libwfdnative.so)
         patchelf --add-needed "libshim_wfdservice.so" "${2}"
         ;;
@@ -109,5 +106,10 @@ done
 
 # Camera debug log file
 sed -i "s|persist.camera.debug.logfile|persist.vendor.camera.dbglog|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_dbg.so
+"${MY_DIR}/setup-makefiles.sh"
+
+# Protobuf (sdk29)
+patchelf --replace-needed libprotobuf-cpp-lite.so libprotobuf-cpp-lite-v29.so "${DEVICE_BLOB_ROOT}"/vendor/lib64/libwvhidl.so
+patchelf --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-full-v29.so "${DEVICE_BLOB_ROOT}"/vendor/lib64/libsettings.so
 
 "${MY_DIR}/setup-makefiles.sh"
