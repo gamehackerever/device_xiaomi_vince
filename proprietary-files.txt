@@ -623,8 +623,8 @@ vendor/firmware/cpp_firmware_v1_10_0.fw
 vendor/firmware/cpp_firmware_v1_5_2.fw
 vendor/firmware/cpp_firmware_v1_1_6.fw
 
-# Charger - from LA.UM.9.6.2.r1-02100-89xx.0
-vendor/bin/hvdcp_opti|9c8897319cb9acd1befb3f8b674641361f3cf215
+# Charger - from LA.UM.9.6.2.r1-02500-89xx.0
+vendor/bin/hvdcp_opti|b249fb84448a61daff60bf77ac4045f23f37fb8e
 
 # Camera Prebuilts
 vendor/bin/hw/android.hardware.camera.provider@2.4-service
