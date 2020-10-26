@@ -231,7 +231,8 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor \
     android.hidl.manager@1.0 \
-    android.hidl.manager@1.0-java
+    android.hidl.manager@1.0-java \
+    android.hidl.base@1.0_vendor
 
 # HW crypto
 PRODUCT_PACKAGES += \
