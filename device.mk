@@ -155,7 +155,8 @@ PRODUCT_BOARD_PLATFORM := msm8996
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8953 \
-    libmm-qcamera
+    libmm-qcamera \
+    libui_shim \
 
 # Consumerir
 PRODUCT_PACKAGES += \
@@ -256,7 +257,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
-    libui_shim
+    libvt_shim
 
 # IPA Manager
 PRODUCT_PACKAGES += \
