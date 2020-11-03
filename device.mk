@@ -189,7 +189,6 @@ PRODUCT_PACKAGES += \
 	libvulkan \
     libdisplayconfig.qti.vendor \
     liboverlay \
-    libqdMetaData.system \
     libgenlock \
     libtinyxml \
     libvulkan
