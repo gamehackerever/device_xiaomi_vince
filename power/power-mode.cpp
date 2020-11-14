@@ -32,7 +32,8 @@ namespace impl {
 
 bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return) {
     switch (type) {
-            case Mode::LAUNCH:
+        case Mode::LAUNCH:
+        case Mode::LOW_POWER:
             *_aidl_return = true;
             return true;
         default:
@@ -44,6 +45,9 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
     switch (type) {
         case Mode::LAUNCH:
             power_hint(POWER_HINT_LAUNCH, enabled ? &enabled : NULL);
+            return true;
+        case Mode::LOW_POWER:
+            power_hint(POWER_HINT_LOW_POWER, reinterpret_cast<void*>(enabled));
             return true;
         default:
             return false;
