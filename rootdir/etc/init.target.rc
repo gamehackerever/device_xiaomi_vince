@@ -41,6 +41,9 @@ on fs
     mkdir /mnt/vendor/persist/bms 0700 root system
     restorecon_recursive /mnt/vendor/persist
 
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/class/thermal/thermal_message/sconfig
+
 on init
     setprop ro.vendor.hw.dualsim ${ro.boot.dualsim}
     setprop ro.vendor.hw.device ${ro.boot.device}
@@ -68,6 +71,17 @@ on init
     chown system system /dev/cpuset/camera-daemon
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
+
+service thermal-engine /vendor/bin/thermal-engine
+   class main
+   user root
+   #chmod 0664 /sys/class/thermal/thermal_message/sconfig
+   #chown system system /sys/class/thermal/thermal_message/sconfig
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   socket thermal-send-rule stream 0660 system system
+   group root
 
 on post-fs
     start vendor.qseecomd
@@ -111,16 +125,6 @@ on property:sys.shutdown.requested=*
 service vendor.qseecomd /vendor/bin/qseecomd
    class core
    user root
-   group root
-   writepid /dev/cpuset/system-background/tasks
-
-service thermal-engine /vendor/bin/thermal-engine
-   class main
-   user root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
-   socket thermal-send-rule stream 0660 system system
    group root
    writepid /dev/cpuset/system-background/tasks
 
