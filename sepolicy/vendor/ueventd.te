@@ -1,1 +1,3 @@
 allow ueventd fpc_sysfs:file rw_file_perms;
+
+allow ueventd debugfs:dir r_dir_perms;
