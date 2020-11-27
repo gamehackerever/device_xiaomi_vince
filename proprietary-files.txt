@@ -228,6 +228,10 @@ vendor/lib/libvidhance.so|ffb47950b1974c68d5daa50de67548c57fc5c0de
 vendor/lib/libXMFD_AgeGender.so|52fe8abb44c6633b6e854a1ba3dffeee51e94e61
 vendor/lib/vendor.qti.hardware.camera.device@1.0_vendor.so|fd7894bcbcc514f757966adc25fd9bd17eddd2eb
 
+# Bluetooth (aptX) - from Crosshatch - 11/RP1A.201105.002/6869500
+system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
+
 # Camera actuators - from vince
 vendor/lib/libactuator_vince_dw9714v_ofilm.so|34ac33dd8fdc9132c912a5e73bf020e0a8dccd84
 vendor/lib/libactuator_vince_dw9763_sunny.so|43cfe08350271661113c3595a395248523d89cab
