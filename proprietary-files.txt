@@ -1210,8 +1210,8 @@ etc/wfdconfigsink.xml|5b4a96f251fd83c2eee520d06bea2b5b159fcd36
 vendor/bin/wcnss_service|6fb29e5b9beee42dce36657b63815afff5c13b1d
 
 # WiFi Display - from LA.UM.8.6.2.r1-08100-89xx.0
-lib/libmmrtpdecoder.so|a990ab20d1c970c827b8e12fe377c4965da7b7f5
-lib/libmmrtpencoder.so|c1d969d3600a9b9a7505e4d1f18ab3ac0f111406
+system_ext/lib/libmmrtpdecoder.so|a990ab20d1c970c827b8e12fe377c4965da7b7f5
+system_ext/lib/libmmrtpencoder.so|c1d969d3600a9b9a7505e4d1f18ab3ac0f111406
 
 # WiFi Display - from LA.UM.9.6.2.r1-02800-89xx.0
 bin/wfdservice|96a583c0efeaf90352b26c20c904ee156238b90f
