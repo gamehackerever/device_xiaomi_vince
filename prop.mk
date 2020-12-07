@@ -213,6 +213,7 @@ ro.telephony.default_network=22,22 \
 ro.telephony.use_old_mnc_mcc_format=true \
 service.qti.ims.enabled=1 \
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+persist.vendor.radio.add_power_save=1
 
 # SurfaceFlinger
 PRODUCT_PROPERTY_OVERRIDES += \
