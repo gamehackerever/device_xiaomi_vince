@@ -207,12 +207,24 @@ persist.vendor.radio.rat_on=combine \
 persist.vendor.radio.sib16_support=1 \
 ril.subscription.types=NV,RUIM \
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+persist.radio.volte.dan_support=true \
 ro.telephony.iwlan_operation_mode=legacy \
 ro.telephony.call_ring.multiple=false \
 ro.telephony.default_network=22,22 \
 ro.telephony.use_old_mnc_mcc_format=true \
 service.qti.ims.enabled=1 \
-vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+persist.vendor.radio.multisim_switch_support=true \
+telephony.lteOnCdmaDevice=1 \
+persist.vendor.sys.cnd.iwlan=1 \
+persist.radio.VT_CAM_INTERFACE=2 \
+persist.radio.NO_STAPA=1 \
+persist.vendor.radio.procedure_bytes=SKIP \
+persist.vendor.radio.rat_on=combine \
+persist.radio.VT_ENABLE=1 \
+persist.vendor.radio.data_ltd_sys_ind=1 \
+persist.vendor.radio.data_con_rprt=1 \
+persist.radio.calls.on.ims=1 \
 persist.vendor.radio.add_power_save=1
 
 # SurfaceFlinger
