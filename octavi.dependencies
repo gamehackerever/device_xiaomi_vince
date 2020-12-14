@@ -1,0 +1,19 @@
+[
+    {
+        "remote": "havoc",
+        "repository": "android_packages_apps_Dirac",
+        "target_path": "packages/apps/Dirac"
+    },
+     {
+        "repository": "gamehackerever/vendor_xiaomi_vince",
+        "target_path": "vendor/xiaomi/vince",
+        "branch": "11",
+        "remote": "github"
+    },
+     {
+        "repository": "stormbreaker-project/kernel_xiaomi_vince",
+        "target_path": "kernel/xiaomi/vince",
+        "branch": "r11.0",
+        "remote": "github"
+    },
+]
