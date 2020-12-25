@@ -37,12 +37,12 @@ BOARD_VENDOR := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="redfin-user 11 RD1A.201105.003.C1 6886399 release-keys"
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ1A.201205.010/6953398 release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/redfin/redfin:11/RD1A.201105.003.C1/6886399:user/release-keys
+    ro.build.fingerprint=google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "google/redfin/redfin:11/RD1A.201105.003.C1/6886399:user/release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys"
 
 #Official
 OCTAVI_BUILD_TYPE := Official
