@@ -1206,10 +1206,12 @@ vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin|5e97baa4957609519835074071c879
 # Wi-Fi Display - from LA.UM.9.6.2.r1-02100-89xx.0
 bin/wfdservice|96a583c0efeaf90352b26c20c904ee156238b90f
 etc/init/wfdservice.rc|311bfdd1675e56499662f39455536b75b78477bb
-etc/wfdconfig.xml|d07f6b0441c0aa8913865100239490fa8687a020
 etc/wfdconfigsink.xml|5b4a96f251fd83c2eee520d06bea2b5b159fcd36
+etc/wfdconfig.xml|d07f6b0441c0aa8913865100239490fa8687a020
 -framework/WfdCommon.jar|046e96fce19cc31ffcfd0daae6847e2d132769af
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so|aa89ab6f11d1d9f22862b8c4076d34172d6f0e8d
+lib/libaudioclient:lib/libwfdaudioclient.so|259c0bf40ba054beebf4a43c95b0923c5b7c8b96
+lib/libmediautils:lib/libwfdmediautils.so|3a9d719ca424297e0dc8b7e081009a60f387ff95
 lib/libFileMux.so|4e05cd5e9913311ad17543d204adcd6d60cc8754
 lib/libOmxMux.so|1f861cbf34f5e885fb4f9637b4aab53a3c59691b
 lib/libwfdavenhancements.so|43c7cfdb914be233419572504966436e8dc2b74a
@@ -1217,7 +1219,7 @@ lib/libwfdcodecv4l2.so|ed83f92af646d0fb66b2d0481dfd948a6d34d400
 lib/libwfdcommonutils.so|a0a01a937e3946b4247235a635507a0994d901fb
 lib/libwfdconfigutils.so|4878964c80aa6b268b01056941bde6e976e2e121
 lib/libwfdmminterface.so|668c1fa38a6d94ae36d74cdf8e3e538de41425fc
-lib/libwfdmmsink.so|493281d3015cf2eb82af0f3844fba306b251ed25
+lib/libwfdmmsink.so|40ba43de24c7d97df9244c63a6bfc00b2f11610c
 lib/libwfdmmsrc.so|f0e91f676e1d26598c0fe1731f213af590a312e0
 lib/libwfdrtsp.so|ff172aaf2df1d5ea4da247bc1af16d68304c7389
 lib/libwfdservice.so|eff7d1419400a8fb764f9e689cf603610cd7f2c4
