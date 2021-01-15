@@ -82,8 +82,12 @@ function blob_fixup() {
 	product/lib64/libdpmframework.so)
 	patchelf --add-needed libdpmframework_shim.so "${2}"
 	;;
-	esac
 
+        # Hex edit libwfdnative.so to link missing symbols
+        lib/libwfdnative.so | lib64/libwfdnative.so)
+        patchelf --add-needed "libshim_wfdservice.so" "${2}"
+        ;;
+	esac
 }
 
 DEVICE_BLOB_ROOT="${LINEAGE_ROOT}"/vendor/"${VENDOR}"/"${DEVICE}"/proprietary
