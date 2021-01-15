@@ -187,7 +187,9 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libvulkan \
     vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor
+    vendor.display.config@2.0.vendor \
+    libdisplayconfig.qti.vendor \
+    libdisplayconfig.qti
 
 # DRM
 PRODUCT_PACKAGES += \
