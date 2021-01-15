@@ -16,4 +16,9 @@
 
 extern "C" {
   void _ZN7android8KeyEvent10initializeEiiiiiiiiill() {}
+  void _ZNK11SkImageInfo13bytesPerPixelEv() {}
+  void _ZN7android11MotionEvent10initializeEiiiiiiiiiNS_20MotionClassificationEffffllmPKNS_17PointerPropertiesEPKNS_13PointerCoordsE() {}
+  void _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlENS_13LayerMetadataE() {}
+  void _ZN7android11AudioSystem16setErrorCallbackEPFviE() {}
+  void _ZN7android21SurfaceComposerClient11Transaction20setDisplayProjectionERKNS_2spINS_7IBinderEEEjRKNS_4RectES9_() {}
 }
