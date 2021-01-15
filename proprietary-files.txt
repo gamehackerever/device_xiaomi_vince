@@ -1218,6 +1218,7 @@ lib/libwfdavenhancements.so|43c7cfdb914be233419572504966436e8dc2b74a
 lib/libwfdcodecv4l2.so|ed83f92af646d0fb66b2d0481dfd948a6d34d400
 lib/libwfdcommonutils.so|a0a01a937e3946b4247235a635507a0994d901fb
 lib/libwfdconfigutils.so|4878964c80aa6b268b01056941bde6e976e2e121
+lib/libwfddisplayconfig.so|f06b58228ea5fc570ad0403be5db4a4f8e11f108
 lib/libwfdmminterface.so|668c1fa38a6d94ae36d74cdf8e3e538de41425fc
 lib/libwfdmmsink.so|40ba43de24c7d97df9244c63a6bfc00b2f11610c
 lib/libwfdmmsrc.so|f0e91f676e1d26598c0fe1731f213af590a312e0
@@ -1248,6 +1249,7 @@ vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so|04334ac3883c64b6201cef
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|9e1000674de86c91933598297625a71e45828dc8
 vendor/lib/libDxHdcp.so|3b1d67a7d95c2cd2855bfeab5a7378e0f6b2d5b5
 vendor/lib/libwfdcommonutils_proprietary.so|1d5d36deea89aa6ed78ce96033b85382104b01c1
+vendor/lib/libwfddisplayconfig_proprietary.so|a3a23a87c0a531f887302bf9edeab90f7a68fcd8
 vendor/lib/libwfdhaldsmanager.so|0827eff03a4f49195572c43dd2e1f95c239c3889
 vendor/lib/libwfdhdcpcp.so|0b8a69106f573a013479b231064c94b539c15e14
 vendor/lib/libwfdmmservice.so|ccdf23feee6f25493297cab321003a2b11177027
