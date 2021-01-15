@@ -87,6 +87,10 @@ function blob_fixup() {
         lib/libwfdnative.so | lib64/libwfdnative.so)
         patchelf --add-needed "libshim_wfdservice.so" "${2}"
         ;;
+
+        lib/libwfdmmsink.so | lib64/libwfdmmsink.so)
+        patchelf --add-needed "libshim_wfdservice.so" "${2}"
+        ;;
 	esac
 }
 
