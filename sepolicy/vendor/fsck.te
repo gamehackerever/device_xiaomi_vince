@@ -1,2 +1,4 @@
 dontaudit fsck self:capability { dac_override dac_read_search };
 allow fsck self:capability kill;
+allow fsck persist_block_device:blk_file read;
+allow fsck persist_block_device:blk_file { open write getattr ioctl };
