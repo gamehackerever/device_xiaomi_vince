@@ -4,6 +4,15 @@
 # Copyright (C) 2017-2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
+#
+
+function blob_fixup() {
+    case "${1}" in
+        vendor/lib/libvidhance_gyro.so)
+            "${PATCHELF}" --replace-needed "android.frameworks.sensorservice@1.0.so" "android.frameworks.sensorservice@1.0-v27.so" "${2}"
+            ;;
+   esac
+}
 
 if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
     return
