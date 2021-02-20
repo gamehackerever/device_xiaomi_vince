@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/octavi_vince.mk
+    $(LOCAL_DIR)/havoc_vince.mk
 
 COMMON_LUNCH_CHOICES := \
-    octavi_vince-user \
-    octavi_vince-userdebug \
-    octavi_vince-eng
+    havoc_vince-user \
+    havoc_vince-userdebug \
+    havoc_vince-eng
