@@ -46,3 +46,4 @@ BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ1A.210105.003/7005429:user/relea
 
 #Official
 OCTAVI_BUILD_TYPE := Official
+OCTAVI_DEVICE_MAINTAINER := Srinand.E.K
