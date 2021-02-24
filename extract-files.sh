@@ -65,6 +65,20 @@ extract "${MY_DIR}"/proprietary-files.txt "${SRC}" \
 
 DEVICE_BLOB_ROOT="${ANDROID_ROOT}"/vendor/"${VENDOR}"/"${DEVICE}"/proprietary
 
+function blob_fixup() {
+	case "${1}" in
+
+	vendor/lib/hw/camera.msm8953.so)
+	    "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+	;;
+        vendor/lib/libFaceGrade.so)
+	    "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+	;;
+	esac
+
+}
+
+
 # Camera configs
 sed -i "s|/system/etc/camera|/vendor/etc/camera|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_sensor_modules.so
 
