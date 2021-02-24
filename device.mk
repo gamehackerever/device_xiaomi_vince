@@ -207,7 +207,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1 \
+    android.hardware.biometrics.fingerprint@2.1-service \
     libunwind
 
 # FM
@@ -375,7 +375,9 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    telephony-ext
+    telephony-ext \
+    android.hardware.radio@1.5 \
+    android.hardware.secure_element@1.0
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
