@@ -9,7 +9,7 @@
 function blob_fixup() {
     case "${1}" in
         vendor/lib/libvidhance_gyro.so)
-            "${PATCHELF}" --replace-needed "android.frameworks.sensorservice@1.0.so" "android.frameworks.sensorservice@1.0-v27.so" "${2}"
+            patchelf --replace-needed "android.frameworks.sensorservice@1.0.so" "android.frameworks.sensorservice@1.0-v27.so" "${2}"
             ;;
    esac
 }
