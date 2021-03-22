@@ -62,6 +62,8 @@ ro.bluetooth.hfp.ver=1.7
 ro.vendor.bluetooth.wipower=false
 
 # Camera
+persist.vendor.camera.CDS=off
+persist.vendor.camera.video.CDS=off
 persist.camera.mct.debug=0
 persist.camera.iface.logs=0
 persist.camera.imglib.logs=0
