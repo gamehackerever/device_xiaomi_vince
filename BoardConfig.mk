@@ -88,6 +88,9 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # Bootanimation
 TARGET_BOOTANIMATION_HALF_RES := true
 
+# Bootanimation
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_TS_MAKEUP := true
