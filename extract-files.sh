@@ -93,20 +93,19 @@ done
 
 # Camera debug log file
 sed -i "s|persist.camera.debug.logfile|persist.vendor.camera.dbglog|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_dbg.so
-"${MY_DIR}/setup-makefiles.sh"
 
 # Camera graphicbuffer shim
-patchelf --add-needed libui_shim.so  "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_ppeiscore.so
+patchelf --add-needed "libui_shim.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_ppeiscore.so
 
 # Camera VNDK support
-patchelf --remove-needed libandroid.so libmmcamera2_stats_modules.so
-patchelf --remove-needed libgui.so libmmcamera2_stats_modules.so
-sed -i "s|libandroid.so|libcamshim.so|g" libmmcamera2_stats_modules.so
-patchelf --remove-needed libgui.so libmmcamera_ppeiscore.so
-patchelf --remove-needed libandroid.so libmpbase.so
+patchelf --remove-needed "libandroid.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_stats_modules.so
+patchelf --remove-needed "libgui.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_stats_modules.so
+sed -i "s|libandroid.so|libcamshim.so|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_stats_modules.so
+patchelf --remove-needed "libgui.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_ppeiscore.so
+patchelf --remove-needed "libandroid.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmpbase.so
 
 # Gnss
-sed -i -e '$a\\    capabilities NET_BIND_SERVICE' vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
+sed -i -e '$a\\    capabilities NET_BIND_SERVICE' "${DEVICE_BLOB_ROOT}"/vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
 
 # WFD
 patchelf --add-needed "libshim_wfdmmsink.so" "${DEVICE_BLOB_ROOT}"/lib/libwfdmmsink.so
@@ -114,3 +113,5 @@ patchelf --add-needed "libshim_wfdmmsink.so" "${DEVICE_BLOB_ROOT}"/lib/libwfdmms
 # Wcnss_service - libqmiservices_shim
 patchelf --add-needed "libqmiservices_shim.so" "${DEVICE_BLOB_ROOT}"/vendor/bin/wcnss_service
 sed -i "s|dms_get_service_object_internal_v01|dms_get_service_object_shimshim_v01|g" "${DEVICE_BLOB_ROOT}"/vendor/bin/wcnss_service
+
+"${MY_DIR}/setup-makefiles.sh"
