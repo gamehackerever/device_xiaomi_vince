@@ -92,6 +92,9 @@ on init
     chown 0664 /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length
     chown 0664 /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
 
+    chown system system /sys/module/battery_saver/parameters/enabled
+    chmod 0664 /sys/module/battery_saver/parameters/enabled
+
 # Add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
