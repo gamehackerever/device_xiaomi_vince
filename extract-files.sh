@@ -114,14 +114,6 @@ patchelf --remove-needed libandroid.so libmpbase.so
 # Gnss
 sed -i -e '$a\\    capabilities NET_BIND_SERVICE' vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
 
-# Goodix
-patchelf --remove-needed libunwind.so gx_fpd
-patchelf --remove-needed libbacktrace.so gx_fpd
-patchelf --add-needed libshims_gxfpd.so gx_fpd
-patchelf --add-needed fakelogprint.so gx_fpd
-patchelf --add-needed fakelogprint.so fingerpint.goodix.so
-patchelf --add-needed fakelogprint.so gxfingerprint.default.so
-
 # WFD
 patchelf --add-needed "libshim_wfdmmsink.so" "${DEVICE_BLOB_ROOT}"/lib/libwfdmmsink.so
 
