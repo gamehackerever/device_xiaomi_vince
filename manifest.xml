@@ -42,6 +42,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl"> 
+        <name>android.hardware.biometrics.fingerprint</name> 
+        <transport>hwbinder</transport> 
+        <version>2.1</version> <interface>
+            <name>IBiometricsFingerprint</name> 
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
@@ -112,6 +120,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <interface>
             <name>IMapper</name>
             <instance>default</instance>
+        </interface> 
+    </hal> 
+    <hal format="hidl"> 
+        <name>android.hardware.ir</name> 
+        <transport>hwbinder</transport> 
+        <version>1.0</version> <interface>
+            <name>IConsumerIr</name> 
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -120,6 +136,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>3.0</version>
         <interface>
             <name>IKeymasterDevice</name>
+            <instance>default</instance>
+        </interface> 
+    </hal> 
+    <hal format="hidl"> 
+        <name>android.hardware.light</name> 
+        <transport>hwbinder</transport> 
+        <version>2.0</version> <interface>
+            <name>ILight</name> 
             <instance>default</instance>
         </interface>
     </hal>
@@ -363,6 +387,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>ILinkLatency</name>
+            <instance>default</instance>
+        </interface> 
+    </hal>
+    <hal format="hidl"> 
+        <name>vendor.qti.hardware.qdutils_disp</name> 
+        <transport>hwbinder</transport> 
+        <version>1.0</version> <interface>
+            <name>IQdutilsDisp</name> 
             <instance>default</instance>
         </interface>
     </hal>
