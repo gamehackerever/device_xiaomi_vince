@@ -67,3 +67,6 @@ allow hal_fingerprint_default sdcardfs:file { getattr };
 allow hal_fingerprint_default gx_fpd_data_file:dir create_dir_perms;
 allow hal_fingerprint_default system_data_file:dir create_dir_perms;
 allow hal_fingerprint_default gx_fpd_data_file:file create_file_perms;
+
+allow hal_fingerprint_default hal_fingerprint_default:netlink_socket { read write};
+allow hal_fingerprint_default system_data_root_file:file { getattr  open  read };
