@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_vince.mk
+    $(LOCAL_DIR)/wave_vince.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_vince-user \
-    aosp_vince-userdebug \
-    aosp_vince-eng
+    wave_vince-user \
+    wave_vince-userdebug \
+    wave_vince-eng
