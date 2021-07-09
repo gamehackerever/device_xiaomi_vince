@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/wave_vince.mk
+    $(LOCAL_DIR)/pixys_vince.mk
 
 COMMON_LUNCH_CHOICES := \
-    wave_vince-user \
-    wave_vince-userdebug \
-    wave_vince-eng
+    pixys_vince-user \
+    pixys_vince-userdebug \
+    pixys_vince-eng
