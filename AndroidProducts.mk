@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_vince.mk
+    $(LOCAL_DIR)/fluid_vince.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_vince-user \
-    arrow_vince-userdebug \
-    arrow_vince-eng
+    fluid_vince-user \
+    fluid_vince-userdebug \
+    fluid_vince-eng
