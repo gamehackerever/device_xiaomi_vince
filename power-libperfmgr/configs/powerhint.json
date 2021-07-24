@@ -7,7 +7,8 @@
         "9999999",
         "2016000",
         "1958400",
-        "1689600"
+        "1689600",
+        "1401600"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -207,7 +208,7 @@
       "PowerHint": "LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 3000,
-      "Value": "0x00000002"
+      "Value": "0x0000002b"
     },
     {
       "PowerHint": "LAUNCH",
