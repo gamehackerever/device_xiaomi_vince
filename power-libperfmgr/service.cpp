@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.power-service.rosy-libperfmgr"
+#define LOG_TAG "android.hardware.power-service.vince-libperfmgr"
 
 #include <thread>
 

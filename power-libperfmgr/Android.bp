@@ -15,7 +15,7 @@
 //
 
 cc_binary {
-    name: "android.hardware.power-service.rosy-libperfmgr",
+    name: "android.hardware.power-service.vince-libperfmgr",
 
     relative_install_path: "hw",
 
@@ -43,10 +43,10 @@ cc_binary {
         "-Wno-unused-variable",
     ],
 
-    init_rc: ["android.hardware.power-service.rosy-libperfmgr.rc"],
+    init_rc: ["android.hardware.power-service.vince-libperfmgr.rc"],
 
     vendor: true,
-    vintf_fragments: ["android.hardware.power-service.rosy.xml"],
+    vintf_fragments: ["android.hardware.power-service.vince.xml"],
 
     required: ["powerhint.json"],
 }
