@@ -150,8 +150,7 @@ PRODUCT_PACKAGES += \
     libcamshim \
     libmm-qcamera \
     libui_shim \
-    libdng_sdk.vendor \
-    Snap
+    libdng_sdk.vendor
 
 # Component overrides
 PRODUCT_COPY_FILES += \
@@ -205,6 +204,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl:64 \
     android.hardware.gatekeeper@1.0-service
+
+# GcamGO
+PRODUCT_PACKAGES += \
+    GCamGOPrebuilt
 
 # GPS
 PRODUCT_PACKAGES += \
