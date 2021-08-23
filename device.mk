@@ -325,6 +325,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.0.vendor \
     vendor.qti.hardware.perf@2.1.vendor \
+    vendor.qti.hardware.perf@2.2 \
+    vendor.qti.hardware.perf@2.2.vendor \
     android.hardware.power.stats@1.0-service.mock \
     android.hardware.power-service.vince-libperfmgr
 
