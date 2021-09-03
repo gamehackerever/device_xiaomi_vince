@@ -133,6 +133,7 @@ ro.lmk.use_minfree_levels=true
 
 # Media
 debug.stagefright.omx_default_rank=0
+debug.stagefright.omx_default_rank.sw-audio=1
 vendor.vidc.disable.split.mode=1
 
 # Perf
