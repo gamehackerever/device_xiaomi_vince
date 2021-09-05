@@ -53,6 +53,7 @@ class Power : public ::aidl::android::hardware::power::BnPower {
     std::atomic<bool> mSustainedPerfModeOn;
 
     ndk::ScopedAStatus updateHint(const char *hint, bool enable);
+    std::atomic<bool> mBatterySaverOn;
 };
 
 }  // namespace pixel
