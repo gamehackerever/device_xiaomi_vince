@@ -12,3 +12,5 @@ allow hal_perf_default proc_meminfo:file { getattr open read };
 # Power HAL
 allow hal_perf_default device:file r_file_perms;
 allow hal_perf_default hal_perf_default:capability { dac_override };
+
+allow hal_perf_default proc_sysctl_schedboost:file { open read write };
