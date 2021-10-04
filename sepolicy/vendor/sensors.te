@@ -1,1 +1,0 @@
-allow sensors persist_file:dir { search };
