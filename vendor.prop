@@ -191,6 +191,9 @@ ro.surface_flinger.wcg_composition_dataspace=143261696
 # Time Services
 persist.backup.ntpServer=0.pool.ntp.org
 
+# System
+persist.sys.binary_xml=false
+
 # Tcp
 net.tcp.2g_init_rwnd=10
 
