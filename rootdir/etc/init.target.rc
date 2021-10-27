@@ -156,16 +156,9 @@ service vendor.per_proxy /vendor/bin/pm-proxy
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
 
-service recovery-fix /vendor/bin/init.sdcard.sh 
-    class core 
-    user system 
-    oneshot 
-    disabled
-
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
     stop vendor.ims_rtp_daemon
-    start recovery-fix
 
 service vendor.qseecomd /vendor/bin/qseecomd
    class core
@@ -271,7 +264,6 @@ on boot
 on property:vendor.post_boot.parsed=1
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
-    start recovery-fix
 
 on property:sys.fp.vendor=goodix
    setprop ro.boot.fpsensor goodix
