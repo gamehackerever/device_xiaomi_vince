@@ -1,10 +1,23 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020 The LineageOS Project
+# Copyright (C) 2017, 2019 The LineageOS Project
 #
-# SPDX-License-Identifier: Apache-2.0
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
+# If we're being sourced by the common script that we called,
+# stop right here. No need to go down the rabbit hole.
 if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
     return
 fi
@@ -19,11 +32,11 @@ VENDOR=xiaomi
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-ANDROID_ROOT="${MY_DIR}/../../.."
+DERP_ROOT="${MY_DIR}/../../.."
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
+HELPER="${DERP_ROOT}/tools/extract-utils/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
     exit 1
 fi
 source "${HELPER}"
@@ -31,8 +44,8 @@ source "${HELPER}"
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=false
 
-KANG=
 SECTION=
+KANG=
 
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
@@ -58,16 +71,23 @@ if [ -z "${SRC}" ]; then
 fi
 
 # Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${DERP_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}"/proprietary-files.txt "${SRC}" \
         "${KANG}" --section "${SECTION}"
 
-DEVICE_BLOB_ROOT="${ANDROID_ROOT}"/vendor/"${VENDOR}"/"${DEVICE}"/proprietary
-
 function blob_fixup() {
 	case "${1}" in
 
+	product/lib64/libdpmframework.so)
+	    "${PATCHELF}" --add-needed libdpmframework_shim.so "${2}"
+	;;
+	vendor/lib/hw/camera.msm8953.so)
+	    "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+	;;
+        vendor/lib/libFaceGrade.so)
+	    "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+	;;
 	vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc)
 	    sed -i 's/fps_hal/vendor.fps_hal/' "${2}"
 	    sed -i 's/group.*/& uhid/' "${2}"
@@ -75,10 +95,23 @@ function blob_fixup() {
 	vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so)
 	    "${PATCHELF_0_8}" --remove-needed "libprotobuf-cpp-lite.so" "${2}"
 	;;
+	vendor/lib/libmmcamera_ppeiscore.so)
+	    "${PATCHELF}" --add-needed libmmcamera_ppeiscore_shim.so  "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_ppeiscore.so
+	;;
+	vendor/lib/libmmcamera2_iface_modules.so)
+	    # Always set 0 (Off) as CDS mode in iface_util_set_cds_mode
+	    sed -i -e 's|\x1d\xb3\x20\x68|\x1d\xb3\x00\x20|g' "${2}"
+	    PATTERN_FOUND=$(hexdump -ve '1/1 "%.2x"' "${2}" | grep -E -o "1db30020" | wc -l)
+	    if [ $PATTERN_FOUND != "1" ]; then
+	        echo "Critical blob modification weren't applied on ${2}!"
+	        exit;
+	    fi
+	;;
 	esac
 
 }
 
+DEVICE_BLOB_ROOT="${DERP_ROOT}"/vendor/"${VENDOR}"/"${DEVICE}"/proprietary
 
 # Camera configs
 sed -i "s|/system/etc/camera|/vendor/etc/camera|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_sensor_modules.so
@@ -93,22 +126,5 @@ done
 
 # Camera debug log file
 sed -i "s|persist.camera.debug.logfile|persist.vendor.camera.dbglog|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_dbg.so
-
-# Camera graphicbuffer shim
-patchelf --add-needed "libui_shim.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_ppeiscore.so
-
-# Camera VNDK support
-patchelf --remove-needed "libandroid.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_stats_modules.so
-patchelf --remove-needed "libgui.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_stats_modules.so
-sed -i "s|libandroid.so|libcamshim.so|g" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera2_stats_modules.so
-patchelf --remove-needed "libgui.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmmcamera_ppeiscore.so
-patchelf --remove-needed "libandroid.so" "${DEVICE_BLOB_ROOT}"/vendor/lib/libmpbase.so
-
-# Gnss
-sed -i -e '$a\\    capabilities NET_BIND_SERVICE' "${DEVICE_BLOB_ROOT}"/vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
-
-# Wcnss_service - libqmiservices_shim
-patchelf --add-needed "libqmiservices_shim.so" "${DEVICE_BLOB_ROOT}"/vendor/bin/wcnss_service
-sed -i "s|dms_get_service_object_internal_v01|dms_get_service_object_shimshim_v01|g" "${DEVICE_BLOB_ROOT}"/vendor/bin/wcnss_service
 
 "${MY_DIR}/setup-makefiles.sh"
