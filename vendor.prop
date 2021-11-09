@@ -157,10 +157,17 @@ persist.vendor.radio.mt_sms_ack=30
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 persist.sys.fflag.override.settings_provider_model=false
+persist.vendor.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.hw_mbn_update=0
+persist.vendor.radio.procedure_bytes=SKIP
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.sib16_support=1
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # Radio (IMS)
+service.qti.ims.enabled=1
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
@@ -193,6 +200,24 @@ persist.backup.ntpServer=0.pool.ntp.org
 
 # System
 persist.sys.binary_xml=false
+
+# Telephony
+DEVICE_PROVISIONED=1
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_plmn=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+rild.libargs=-d /dev/smd0
+rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+ril.subscription.types=NV,RUIM
+ro.telephony.call_ring.multiple=false
+ro.telephony.default_network=22,22
+ro.telephony.use_old_mnc_mcc_format=true
 
 # Tcp
 net.tcp.2g_init_rwnd=10
