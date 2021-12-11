@@ -107,12 +107,12 @@ rild.libargs=-d /dev/smd0
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
 ro.telephony.call_ring.multiple=false
-ro.telephony.use_old_mnc_mcc_format=true
 service.qti.ims.enabled=1
 #
 # Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
 #
 ro.telephony.default_network=22,22
+telephony.lteOnCdmaDevice=1
 
 # WiFi
 persist.mm.sta.enable=0
