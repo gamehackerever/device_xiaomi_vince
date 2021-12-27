@@ -29,6 +29,7 @@ $(call inherit-product, device/xiaomi/vince/device.mk)
 
 # Inherit some common ArrowOS stuff.
 $(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := vince
