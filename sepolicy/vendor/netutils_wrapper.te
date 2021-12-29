@@ -1,0 +1,2 @@
+allow netutils_wrapper netutils_wrapper:capability { dac_override };
+allow netutils_wrapper netutils_wrapper:capability { sys_admin };
