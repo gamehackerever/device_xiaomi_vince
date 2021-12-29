@@ -1,0 +1,2 @@
+#============= untrusted_app ==============
+allow untrusted_app virtual_ab_prop:file { getattr open };

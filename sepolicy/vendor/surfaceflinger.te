@@ -7,3 +7,4 @@ allow surfaceflinger sysfs_kgsl:file { getattr read open };
 allow surfaceflinger sysfs_kgsl:lnk_file read;
 allow surfaceflinger vendor_file:file { execute getattr open read };
 allow surfaceflinger vendor_system_prop:file { getattr open read };
+binder_call(surfaceflinger, init)

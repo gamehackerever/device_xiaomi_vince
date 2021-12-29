@@ -1,0 +1,2 @@
+#============= vendor_fm_app ==============
+allow vendor_fm_app vendor_default_prop:file { getattr open };
