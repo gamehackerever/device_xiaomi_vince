@@ -567,4 +567,6 @@
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorBatteryLed">false</bool>
 
+    <!-- Whether device supports an gaming mode profiles -->
+    <bool name="config_gamingmode_performance">true</bool>
 </resources>
