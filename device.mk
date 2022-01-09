@@ -159,7 +159,7 @@ PRODUCT_COPY_FILES += \
 
 # Dirac
 PRODUCT_PACKAGES += \
-	Dirac
+    Dirac
 
 # Display
 PRODUCT_PACKAGES += \
@@ -188,8 +188,6 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fakelogprint \
-    libshims_gxfpd \
     android.hardware.biometrics.fingerprint@2.1
 
 # FM
