@@ -40,3 +40,6 @@ TARGET_VENDOR := Xiaomi
 BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Arrow-Specific Flags
+DEVICE_MAINTAINER := srinandek
